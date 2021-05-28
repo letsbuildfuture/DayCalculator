@@ -1,0 +1,15 @@
+<div class="input-block">
+  <form  #form="ngForm" ngNativeValidate (ngSubmit)="calculate()">
+      <app-input-date  [label] = "'From:'" [value]="startDate" (valueChange)="updateValue($event,'startDate')"></app-input-date>
+    
+      <app-input-date  [label] = "'To:'" [value]="endDate" (valueChange)="updateValue($event,'endDate')"></app-input-date>
+
+      <app-toggle-slider [label]="'Include Weekends?'" [value]="includeWeekendInd" (valueChange)="updateValue($event,'includeWeekendInd')"></app-toggle-slider>
+      <app-toggle-slider [label]="'Include End Day?'" [value]="includeLastDayInd" (valueChange)="updateValue($event,'includeLastDayInd')"></app-toggle-slider>
+      
+      <div class="submit-button">
+        <input type="submit" class="button" value="Calculate">
+      </div>
+  </form>
+  <app-output-block *ngIf="noOfDays>=0"  [output]="noOfDays" [@inOutAnimation]></app-output-block>
+</div>

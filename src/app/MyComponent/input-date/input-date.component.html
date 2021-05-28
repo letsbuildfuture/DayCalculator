@@ -1,0 +1,4 @@
+<div  class="input-field-end">
+    <label for="dateField" class="label" >{{label}}</label>
+    <input type="date" class="date-input"name="dateField" id="dateField" [(ngModel)]="value" value="new Date().toDateInputValue()" (change)="updateValue(value)" required>
+</div>
